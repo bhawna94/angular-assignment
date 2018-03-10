@@ -1,0 +1,12 @@
+
+<ul *ngFor="let data of item">
+  <li>{{ data.id.videoId }}</li>
+  <a routerLink="/login/youtubevideos/{{ data.id.videoId }} " routerLinkActive="active">
+    <li>{{ data.snippet.title }}</li>
+  </a>
+  <li>{{ data.snippet.description}}</li>
+  <img src="{{data.snippet.thumbnails.default.url}}" alt="Forest" height={{data.snippet.thumbnails.default.height}}
+       width={{data.snippet.thumbnails.default.width}}>
+</ul>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,18 @@
+<p> login !!!</p>
+
+<div class="container">
+  <form #loginForm="ngForm" (submit)="formsubmission()">
+  <label><b>Username</b></label>
+
+   <input #email = "ngModel" type="email" placeholder="Enter Email" name="email" [(ngModel)] = "person.email"
+          required pattern ="[a-z0-9,_%+-]+@[a-z0-9,-]+\.[a-z]{2,4}$"required/><br>
+    <p *ngIf="email.invalid">Invalid</p>
+
+
+     <label><b>Password</b></label>
+  <input #password="ngModel" type="password" placeholder="Enter Password" [(ngModel)] ="person.password" name="password" required><br>
+    <p *ngIf="password.invalid"> Required</p>
+  <button [disabled]="loginForm.invalid" type="submit">Login</button><br>
+  </form>
+</div>
+<router-outlet></router-outlet>
